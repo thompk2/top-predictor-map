@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>Force-Directed Graph</title>
+<style>
+
+.link line {
+  stroke: #d8d8d8;
+  stroke-width: 1px;
+}
+    
+link .line.diminish {
+    stroke: red;
+}
+
+.link-hover line{
+    stroke-width: 1px;
+}
+
+.link line.separator {
+  stroke: #fff;
+  stroke-width: 1px;
+}
+
+.d-0,
+.d-1{
+    fill: #c1c1c1;
+}
+    
+.d-2{
+    fill: #ddd;
+}
+
+.node text {
+  font: 12px sans-serif;
+  font-weight: bold;
+  pointer-events: none;
+  background: red;
+  fill: #696969;
+}
+    
+.node>circle:hover {
+    stroke: #696969;
+    stroke-width: 2px;
+}
+.segment {
+    fill: none;
+}
+.parent-cluster {
+    fill: none;
+}
+
+.tip {
+    font: 12px sans-serif;
+    position: fixed;
+    margin: 0px auto;
+    left: 10px;
+    bottom: 50px;
+}
+    
+.buttons {
+    position: fixed;
+}
+    
+.row{
+    display: flex;
+    display: -ms-flexbox;
+    align-content: stretch;
+    -ms-flex-align: stretch;
+    min-height: 20px;
+    overflow: visible;
+    line-height: 20px;
+    
+}
+    
+.col{
+  flex: 1;
+  -ms-flex: 1 0 50px;
+  padding-left: 10px;
+  padding-right: 10px;
+  overflow: hidden;
+}
+    
+.title {
+    width: 60px;
+    min-width: 70px;
+    flex: initial;
+    border-right: 1px solid #ccc;
+    text-align: right;
+}
+    
+.segment circle.diminish{
+    fill: #fff;
+}
+    
+.node>circle.diminish{
+    fill: #eee;
+}
+    
+.segment circle.diminish.less{
+    opacity: .2;
+    fill: inherit;
+}
+</style>
+<body>
+    <div class="tip">
+        <div class="row">
+            <div class="title col">Name</div>
+            <div class="name col"></div>
+        </div>
+        <div class="row">
+            <div class="title col">Frequency</div>
+            <div class="freq col"></div>
+        </div>
+        <div class="row">
+            <div class="title col">Lift</div>
+            <div class="lift col"></div>
+        </div>
+        <div class="row">
+            <div class="title col">Parent</div>
+            <div class="p-name col"></div>
+        </div>
+    </div>
+    <div class="buttons">
+        <button class="filter-button ten">x10</button>
+        <button class="filter-button one">x1</button>
+        <button class="top-10 lift">top lift</button>
+        <button class="clear-filter">reset</button>
+    </div>
+</body>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="js/colorbrewer.js"></script>
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="js/script.js" type="application/javascript"></script>
